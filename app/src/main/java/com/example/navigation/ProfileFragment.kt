@@ -36,6 +36,14 @@ class ProfileFragment : Fragment() {
                 mBundle
             )
         }
+
+        binding!!.buttonOpenSafe.setOnClickListener {
+            val action = ProfileFragmentDirections
+                .actionProfileFragmentToDetailProfileFragment(
+                    dataSatu = "a@gmail.com"
+                )
+            findNavController().navigate(action)
+        }
     }
 
     override fun onDestroy() {

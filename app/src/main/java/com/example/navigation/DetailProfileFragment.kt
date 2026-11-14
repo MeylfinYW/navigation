@@ -35,6 +35,11 @@ class DetailProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding!!.tvParam.text = param1.toString()
+
+        if (arguments != null) {
+            val dataTerima = DetailProfileFragmentArgs.fromBundle(arguments as Bundle).dataSatu
+            binding!!.tvParamSafeArgs.text = dataTerima.toString()
+        }
     }
 
     override fun onDestroy() {
